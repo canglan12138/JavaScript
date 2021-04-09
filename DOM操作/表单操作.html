@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>全选练习</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#content {
+			width: 500px;
+			margin: 50px auto;
+			padding: 10px;
+			background: skyblue;
+			border: 1px solid black;
+		}
+	</style>
+
+	<script type="text/javascript">
+    window.onload = function(){
+      var items = document.getElementsByName('items')
+
+			//全选
+			var checkAllBtn = document.getElementById('checkAllBtn')
+			checkAllBtn.onclick = function () {
+				for (let item of items) {
+				  item.checked = true
+				}
+        checkedAllBox.checked = true
+      }
+
+			//全不选
+      var checkNoBtn = document.getElementById('checkNoBtn')
+      checkNoBtn.onclick = function () {
+        for (let item of items) {
+          item.checked = false
+        }
+        checkedAllBox.checked = false
+      }
+
+			//反选
+      var checkRevBtn = document.getElementById('checkRevBtn')
+      checkRevBtn.onclick = function () {
+        for (let item of items) {
+            item.checked = !item.checked
+        }
+        //判断是否全选，全选则则勾选全选框
+        for (let item of items) {
+          if (!item.checked) {
+            //只要有一个没选，就不勾选全选框
+            return checkedAllBox.checked = false
+					}
+          checkedAllBox.checked = true
+				}
+      }
+
+			//提交
+      var submit = document.getElementById('submit')
+      submit.onclick = function () {
+        for (let item of items) {
+          if (item.checked)
+          alert(item.value)
+				}
+      }
+
+      //全选/全不选
+			var checkedAllBox = document.getElementById('checkedAllBox')
+      checkedAllBox.onclick = function () {
+          for (let item of items) {
+            item.checked = this.checked
+          }
+      }
+
+      //为每个按钮添加监听事件
+      for (let item of items) {
+        item.onclick = function () {
+          checkedAllBox.checked = true
+					alert(checkedAllBox.checked)
+					for (let item of items) {
+					  if (!item.checked) {
+							checkedAllBox.checked = false
+							break
+						}
+					}
+        }
+			}
+    };
+	</script>
+
+</head>
+<body>
+
+<div id="content">
+	<form method="post">
+		你爱好的运动是:<label for="checkedAllBox"><input type="checkbox" id="checkedAllBox"> 全选/全不选</label>
+		<br>
+		<label for="basktball">
+			<input type="checkbox" name="items" value="篮球" id="basktball">篮球
+		</label>
+		<label for="football">
+			<input type="checkbox" name="items" value="足球" id="football">足球
+		</label>
+		<label for="pingpang">
+			<input type="checkbox" name="items" value="乒乓球" id="pingpang">乒乓球
+		</label>
+		<label for="volleyball">
+			<input type="checkbox" name="items" value="排球" id="volleyball">排球
+		</label>
+		<br>
+		<input type="button" value="全选" id="checkAllBtn">
+		<input type="button" value="全不选" id="checkNoBtn">
+		<input type="button" value="反选" id="checkRevBtn">
+		<input type="button" value="提交" id="submit">
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#content {
+			width: 250px;
+			height: 185px;
+			margin: 10px auto;
+			padding-top: 10px;
+			text-align: center;
+			background: deepskyblue;
+		}
+	</style>
+
+	<script>
+		window.onload = () => {
+		  var num_bf = document.getElementById('num_bf')
+			var btn = document.getElementById('btn')
+      var num_af = document.getElementById('num_af')
+
+			btn.onclick = () => {
+		    let flag = true
+				let arr = num_bf.value
+		    for (let item of arr) {
+		      if (isNaN(parseInt(item))) {
+		        flag = false
+            num_bf.value = ''
+						alert('请输入数字')
+						break
+					}
+				}
+		    if (flag) {
+          var arr_num = num_bf.value.split('')
+          for (let i = 0;i < arr_num.length;i++) {
+            for (let j = i + 1;j < arr_num.length;j++) {
+              if (arr_num[i] == arr_num[j]) {
+                arr_num.splice(j,1)
+                j--
+              }
+            }
+          }
+          num_af.value = arr_num
+				}
+      }
+		}
+	</script>
+
+</head>
+<body>
+
+<div id="content">
+	<h2>请输入数字</h2>
+	<input type="text" id="num_bf">
+	<br>
+	<br>
+	<button id="btn">去重</button>
+	<br>
+	<h2>去重后</h2>
+	<input type="text" id="num_af">
+</div>
+
+</body>
+</html>

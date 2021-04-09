@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	var num1 = parseInt(prompt('请输入第1个数：'))
+  var num2 = parseInt(prompt('请输入第2个数：'))
+	var num3 = parseInt(prompt('请输入第3个数：'))
+	let arry = [num1,num2,num3]
+	for (let i = 0;i < arry.length;i++) {
+	  for (let j = 0;j < arry.length - 1;j++) {
+      if (arry[j] > arry[j + 1]) {
+        let box = arry[j]
+        arry[j] = arry[j + 1]
+        arry[j + 1] = box
+      }
+		}
+	}
+	alert(arry)
+</script>
+
+</body>
+</html>

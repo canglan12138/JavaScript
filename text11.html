@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	function Person(name,age) {
+		this.name = name
+		this.age = age
+  }
+
+  var per1 = new Person('孙悟空',20)
+	var per2 = new Person('猪八戒',30)
+	var per3 = new Person('沙和尚',40)
+	var per4 = new Person('二郎神',25)
+
+	var arr = [per1,per2,per3,per4]
+
+	// var newarr = arr.filter((n) => {
+	//   return n.age > 20
+	// })
+
+	function myFilter(arr,age) {
+	  var newarr = []
+		for (let n of arr) {
+		  if (n.age > age) {
+		    newarr.push(n)
+			}
+		}
+		return newarr
+	}
+
+  console.log(myFilter(arr,20));
+  // console.log(newarr);
+</script>
+
+</body>
+</html>

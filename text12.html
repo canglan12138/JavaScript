@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	var arr = [1,2,3,4,4,4,3,2,1,5,5]
+	function getarr(arr) {
+		for (let i = 0 ;i < arr.length; i++) {
+		  for (let j = i + 1;j < arr.length; j++) {
+					if (arr[i] == arr[j]) {
+					  arr.splice(j,1)
+						j--
+					}
+			}
+		}
+		return arr
+  }
+  var result = getarr(arr)
+  console.log(result);
+</script>
+
+</body>
+</html>

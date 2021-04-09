@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#box {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+		#box2 {
+			top: 250px;
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: absolute;
+		}
+	</style>
+
+	<script src="js/tools.js"></script>
+	<script>
+		window.onload = () => {
+      var box = document.getElementById('box')
+		  var box2 = document.getElementById('box2')
+
+			var btn_r = document.getElementById('btn_r')
+			var btn_l = document.getElementById('btn_l')
+			var btn2_r = document.getElementById('btn2_r')
+			var btn2_l = document.getElementById('btn2_l')
+			var test = document.getElementById('test')
+
+      btn_r.onclick = () => {
+        move(box,800,10,'left')
+			}
+
+			btn_l.onclick = () => {
+        move(box,0,10,'left')
+			}
+
+      btn2_r.onclick = () => {
+        move(box2,800,30,'left')
+			}
+			btn2_l.onclick = () => {
+        move(box2,0,30,'left')
+			}
+
+			test.onclick = () => {
+				setInterval(() => {
+          move(box2,1650,30,'width',() => {
+            move(box2,750,30,'height',() => {
+              move(box2,0,30,'top',() => {
+                move(box2,100,30,'width',() => {
+                  move(box2,100,30,'height',() => {
+                    move(box2,250,30,'top')
+                  })
+                })
+              })
+            })
+          })
+
+          move(box,1650,30,'width',() => {
+            move(box,750,30,'height',() => {
+              move(box,0,30,'top',() => {
+                move(box,100,30,'width',() => {
+                  move(box,100,30,'height',() => {
+                    move(box,131,30,'top')
+                  })
+                })
+              })
+            })
+          })
+				},6000)
+			}
+		}
+	</script>
+
+</head>
+<body>
+<button id="btn_r">点我一下开始box向右移动</button>
+<button id="btn_l">点我一下开始box向左移动</button>
+<br><br>
+
+<button id="btn2_r">点我一下开始box2向右移动</button>
+<button id="btn2_l">点我一下开始box2向左移动</button>
+<br><br>
+
+<button id="test">测试</button>
+<br><br>
+
+<div id="box"></div>
+<div id="box2"></div>
+
+<div style="height: 1000px;border-left: 1px solid black;position:absolute;left: 800px;top: 0"></div>
+</body>
+</html>

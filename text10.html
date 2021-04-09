@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	/*
+	* 对象的字面量写法
+	* */
+	// var a = {
+	//   name: 'jk',
+	// 	run() {
+  //     console.log('running');
+  //   }
+	// }
+
+	var a = new Object()
+	a.name = 'jk'
+	a.age = 18
+	a.run = function () {
+    console.log('running');
+  }
+  console.log(a.name);
+  console.log(a.age);
+  a.run()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		#box1 {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+      var btn = document.getElementById('btn')
+      btn.onclick = function () {
+				var box1 = document.getElementById('box1')
+				var obj = getComputedStyle(box1,null)
+				alert(obj.width)
+      }
+    }
+	</script>
+
+</head>
+<body>
+
+<div id="box1">
+
+</div>
+<br>
+<button id="btn">按钮</button>
+</body>
+</html>

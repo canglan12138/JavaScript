@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+/*
+* 回调函数
+* 上层调用 下层定义
+* */
+	var a = (x,y,callback) => {
+	  var res = x * y
+	  callback(res)
+	}
+	a(5,6,(res) => {
+	  alert(res)
+	})
+
+/*
+* 上层定义 下层调用
+* */
+	// var b = (x,y) => {
+	//   return x*y
+	// }
+	// alert(b(5,6))
+
+	// function f1() {
+	// 	function f2() {
+	// 		alert('f2函数')
+  //   }
+  //   return f2
+  // }
+  // f1()()
+</script>
+
+</body>
+</html>

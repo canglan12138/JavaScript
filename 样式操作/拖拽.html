@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		#box1 {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+		#box2 {
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: relative;
+			top: 100px;
+			left: 100px;
+		}
+	</style>
+
+	<script>
+
+		function drag(obj) {
+      obj.onmousedown = (event) => {
+        event = event || event
+        //鼠标点哪里就定位哪里
+        var ol = event.clientX - obj.offsetLeft
+        var ot = event.clientY - obj.offsetTop
+        document.onmousemove = (event) => {
+          event = event || window.event
+          var left = event.clientX - ol
+          var top = event.clientY - ot
+          obj.style.left = left + 'px'
+          obj.style.top = top + 'px'
+        }
+        document.onmouseup = () => {
+          document.onmousemove = null
+          document.onmouseup = null
+        }
+      }
+		}
+
+		window.onload = () => {
+		  var box1 = document.getElementById('box1')
+		  var box2 = document.getElementById('box2')
+			drag(box1)
+			drag(box2)
+		}
+	</script>
+
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+</html>

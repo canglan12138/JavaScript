@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>添加删除记录练习</title>
+	<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+
+	<script>
+		window.onload = function () {
+		  //删除函数
+		  function del() {
+        var tr = this.parentNode.parentNode
+        var name = tr.getElementsByTagName('td')[0].innerHTML
+        var flag = confirm('确认删除' + name +'吗？')
+        if (flag) {
+          tr.parentNode.removeChild(tr)
+        }
+        return false
+      }
+
+      //标记函数
+      function my_flag(flag) {
+        flag = false
+        return flag
+      }
+
+      /*
+      * 删除员工信息
+      * */
+      // var allA = document.getElementsByTagName('a')
+      // for (let i = 0;i < allA.length;i++) {
+      //   allA[i].onclick = del
+      // }
+
+      var employeeTable = document.getElementById('employeeTable')
+      employeeTable.onclick = (event) => {
+        event = event || window.event
+				if (event.target.className == 'link') {
+					var employeeTable_tr = employeeTable.getElementsByTagName('tr')[1]
+          var name = employeeTable_tr.getElementsByTagName('td')[0].innerHTML
+          var flag = confirm('确认删除' + name +'吗？')
+          if (flag) {
+            employeeTable_tr.parentNode.removeChild(employeeTable_tr)
+          }
+          return false
+				}
+
+
+        // if (event.target.className == 'link') {
+        //   var employeeTable_tr = this.parentNode.parentNode
+        //   var name = employeeTable_tr.getElementsByTagName('td')[0].innerHTML
+        //   var flag = confirm('确认删除' + name +'吗？')
+        //   if (flag) {
+        //     employeeTable_tr.parentNode.removeChild(employeeTable_tr)
+        //   }
+        //   return false
+        // }
+
+			}
+
+
+			/*
+			* 添加员工信息
+			* */
+      var inputAll = document.getElementsByTagName('input')
+      var submit = document.getElementById('addEmpButton')
+      submit.onclick = function () {
+        var tr = document.createElement('tr')
+				/*
+				* 判断添加时是否有人名
+				* 有人名可以添加
+				* 没有人名弹出警告
+				* */
+        var flag = true
+				if (inputAll[0].value != '') {
+				  var reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+				  if (inputAll[1].value) {
+				    if (reg.test(inputAll[1].value)) {
+              for (let item of inputAll) {
+                var td_name = document.createElement('td')
+                td_name.innerHTML = item.value
+                tr.appendChild(td_name)
+              }
+						}else {
+              flag = my_flag(flag)
+				      alert('请填写正确的邮箱格式')
+						}
+					}else {
+            flag = my_flag(flag)
+            alert('请填写邮箱')
+					}
+				}else {
+          flag = my_flag(flag)
+          alert('必须填写姓名')
+				}
+
+        /*
+        * 创建新的一行，显示新的人员信息
+        * */
+        if (flag) {
+          var tbody = document.getElementsByTagName('tbody')[0]
+          var td_delete = document.createElement('td')
+          td_delete.innerHTML = '<a href="javascript:;" class="link">Delete</a>'
+          tr.appendChild(td_delete)
+          tbody.appendChild(tr)
+
+					//清空输入框中的内容
+          for (let item of inputAll) {
+            item.value = ''
+          }
+
+        	//重新获取 a 元素，绑定删除事件
+          // var allA = document.getElementsByTagName('a')
+          // for (let i = 0;i < allA.length;i++) {
+          //   allA[i].onclick = del
+          // }
+				}
+      }
+    }
+	</script>
+
+</head>
+
+<body>
+
+<table id="employeeTable">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Salary</th>
+		<th>&nbsp;</th>
+	</tr>
+	<tr>
+		<td>Tom</td>
+		<td>tom@tom.com</td>
+		<td>5000</td>
+		<td>
+			<a href="javascript:;" class="link">Delete</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Jerry</td>
+		<td>jerry@sohu.com</td>
+		<td>8000</td>
+		<td>
+			<a href="javascript:;" class="link">Delete</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Bob</td>
+		<td>bob@tom.com</td>
+		<td>10000</td>
+		<td>
+			<a href="javascript:;" class="link">Delete</a>
+		</td>
+	</tr>
+</table>
+
+<div id="formDiv">
+
+	<h4>添加新员工</h4>
+
+	<table>
+		<tr>
+			<td class="word">name: </td>
+			<td class="inp">
+				<input type="text" name="empName" id="empName" />
+			</td>
+		</tr>
+		<tr>
+			<td class="word">email: </td>
+			<td class="inp">
+				<input type="text" name="email" id="email" />
+			</td>
+		</tr>
+		<tr>
+			<td class="word">salary: </td>
+			<td class="inp">
+				<input type="text" name="salary" id="salary" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<button id="addEmpButton">
+					Submit
+				</button>
+			</td>
+		</tr>
+	</table>
+
+</div>
+
+</body>
+
+</html>

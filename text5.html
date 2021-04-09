@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//原型对象
+	Person.prototype.sayname = function () {
+		alert(this.name)
+  }
+	function Person(name,age,gender) {
+		this.name = name
+		this.age = age
+		this.gender = gender
+  }
+
+  var per = new Person('孙悟2',20,'男')
+	per.sayname()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		#box1 {
+			width: 150px;
+			height: 100px;
+			background: #99ff99;
+		}
+		#span1 {
+			width: 15px;
+			height: 15px;
+			background: yellow;
+		}
+
+	</style>
+
+	<script>
+		window.onload = function () {
+			var span = document.getElementById('span1')
+			span.onclick = function (event) {
+			  event = event || window.event
+				alert('我是span')
+				event.cancelBubble = true
+      }
+
+      var box = document.getElementById('box1')
+      box.onclick = function (event) {
+			  event = event || window.event
+        alert('我是div')
+				event.cancelBubble = true
+      }
+
+      document.body.onclick = function () {
+        alert('我是body')
+      }
+    }
+	</script>
+
+</head>
+<body>
+<div id="box1">
+	我是box1
+	<span id="span1">我是span</span>
+</div>
+</body>
+</html>

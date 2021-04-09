@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#content {
+			width: 250px;
+			height: 185px;
+			margin: 50px auto;
+			padding-top: 10px;
+			text-align: center;
+			background: deepskyblue;
+		}
+
+	</style>
+
+	<script>
+		window.onload = function () {
+		  var btn = document.getElementById('btn')
+			btn.onclick = function () {
+				var txt = document.getElementById('txt')
+				var num = txt.value
+				var num_arr = num.split('')
+        for (let i = 0;i < num_arr.length;i++) {
+          for (let j = i + 1;j < num_arr.length;j++) {
+            if (num_arr[i] > num_arr[j]) {
+              let x = num_arr[i]
+              num_arr[i] = num_arr[j]
+              num_arr[j] = x
+            }
+          }
+        }
+        var after = document.getElementById('after')
+				after.value = num_arr
+      }
+    }
+	</script>
+
+</head>
+<body>
+
+<div id="content">
+	<h2>请输入数字</h2>
+	<input type="text" id="txt">
+	<br>
+	<br>
+	<button id="btn">升序</button>
+	<br>
+	<h2>升序后</h2>
+	<input type="text" id="after">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	var height = prompt('请输入你的身高：')
+	if (height <0 || height >210 ||isNaN(height)) {
+	  alert('输入违法')
+	}else {
+    if (height > 180) {
+      var age = prompt('请输入你的年龄：')
+      if (age >20 && age <=30) {
+        var salary = prompt('请输入你的薪资：')
+        if (salary >=10000) {
+          alert('我们结婚吧');
+        }else {
+          alert('没钱，你可以走了');
+        }
+      }else{
+        alert('年龄有问题，你可以走了');
+      }
+    }else {
+      alert('身高不够,你可以走了');
+    }
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+
+	// var a = '12131fsdfaf'
+  // console.log(typeof a);
+  // console.log(a);
+	// a = Number(a)
+  // console.log(typeof a);
+  // console.log(a);
+  // console.log(isNaN(a));
+
+  //NaN不与任何值相等，包括它自身 NaN == NaN //false
+  // console.log(a == NaN);
+
+	// var a = prompt()
+  // console.log(typeof a);
+  // console.log(a);
+
+  while (true) {
+    var num = prompt('请输入大于0数字：')
+    if (num == null) {
+      alert('感谢使用~~~')
+      document.write('你该走了~~~' + '&#1024;')
+      break
+    }
+    if (isNaN(num) || num < 0 || num == '') {
+      alert('请输入有效数字');
+      continue
+    }
+			if (num % 2 == 0) {
+				alert(num + '是偶数')
+			}else {
+				alert(num + '不是偶数')
+			}
+	}
+</script>
+
+</body>
+</html>

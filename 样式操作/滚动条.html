@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		#info {
+			width: 200px;
+			height: 250px;
+			background: #99ff99;
+			overflow: auto;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+			var info = document.getElementById('info')
+			var items = document.getElementsByName('items')
+
+			info.onscroll = function () {
+        if (this.scrollHeight - this.scrollTop < 260) {
+          items[0].disabled = false
+          items[1].disabled = false
+				}else {
+          items[0].disabled = true
+          items[1].disabled = true
+				}
+      }
+
+      items[1].onclick = function () {
+			  if (items[0].checked) {
+          alert(items[0].value)
+				}
+      }
+    }
+	</script>
+
+</head>
+<body>
+
+<h2>请仔细阅读以下协议</h2>
+<p id="info">
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+	如果你想要注册，请仔细阅读协议
+</p>
+
+<form method="post" action="">
+	<input type="checkbox" disabled="disabled" name="items" value="我已阅读">我已阅读
+	<input type="submit" value="注册" name="items" disabled="disabled">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	function Person(name,age,gender) {
+		this.name = name
+		this.age = age
+		this.gender = gender
+  }
+
+  Person.prototype.toString = function () {
+    return ('name:' + this.name + ' ' + 'age:' + this.age + ' ' + 'gender:' + this.gender);
+  }
+
+  var person = new Person('孙悟空',20,'男')
+  console.log(person);
+</script>
+
+</body>
+</html>

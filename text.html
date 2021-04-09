@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		* 构造函数
+		* */
+		function Person() {
+			this.name = 'jack'
+			this.age = 20
+			this.sex = 'man'
+			this.eat = function () {
+        console.log('正在吃');
+      }
+    }
+
+    /*
+    * ES6 语法 class
+    * */
+		// class Person {
+		//   constructor() {
+		//     this.name = 'jack'
+		// 		this.age = 20
+		// 		this.sex = 'man'
+    //   }
+    //   eat() {
+    //     console.log('正在吃');
+    //   }
+		// }
+
+		//简单写法
+    // class Person {
+    //     name = 'jack'
+    //     age = 20
+    //     sex = 'man'
+    //   eat() {
+    //     console.log('正在吃');
+    //   }
+    // }
+
+		//继承
+		// class Kid extends Person {
+    //   constructor(props) {
+    //     super(props);
+		// 		this.height = 180
+    //   }
+		// 	run() {
+    //     console.log('正在跑');
+    //   }
+    // }
+
+		//继承简单写法
+		// class Kid extends Person {
+		//   height = 180
+		// 	score = 100
+		// 	run() {
+    //     console.log('正在跑');
+    //   }
+    //   read() {
+    //     console.log('正在看');
+    //   }
+		// }
+
+    //实例化
+
+    // var persion = new Person()
+		// persion.weight = 160
+    // console.log(persion.name);
+    // console.log(persion.age);
+    // console.log(persion.sex);
+    // persion.eat()
+    // console.log('name' in persion);
+
+		/*
+		* 构造函数 和 对象的区别
+		* 构造函数使用时需要实例化
+		* 对象不需要
+		* */
+
+    var person = {
+      name : 'jack',
+			age : 18,
+			gender : '男',
+			increment() {
+        console.log(123);
+      }
+      // increment : (x,y) => {
+      //   return x + y
+		}
+
+    // for (let n in person) {
+    //   console.log(typeof n);
+    //   console.log(n + ':' + person[n]);
+    // }
+
+		// var obj = new Object()
+		// obj.name = 'jack'
+		// obj.age = 20
+		// obj.sayname = function () {
+		// 		alert(this.name)
+    // }
+    // console.log(obj)
+		// obj.sayname()
+
+    // person.score = 55
+    // console.log(person.name);
+    // console.log(person.age);
+    // console.log(person.gender);
+    // console.log(person.score);
+    // person.increment()
+    // console.log(person.increment(1, 6));
+
+    // var kid = new Kid()
+    // console.log(kid.name);
+    // console.log(kid.age);
+    // console.log(kid.sex);
+    // kid.eat()
+    // console.log(kid.height);
+    // kid.run()
+    // console.log(kid.score);
+    // kid.read()
+	</script>
+</head>
+<body>
+
+</body>
+</html>

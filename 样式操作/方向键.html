@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		#box1 {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+
+	<script>
+		window.onload = () => {
+      var box1 = document.getElementById('box1')
+      var speed = 10
+			var dir = 0
+      var timer = setInterval(() => {
+        //向下移动 40
+        if (dir == 40) {
+          box1.style.top = box1.offsetTop + speed + 'px'
+        }
+        //向上移动
+        if (dir == 38) {
+          box1.style.top = box1.offsetTop - speed + 'px'
+        }
+        //向左移动
+        if (dir == 37) {
+          box1.style.left = box1.offsetLeft - speed + 'px'
+        }
+        //向右移动
+        if (dir == 39) {
+          box1.style.left = box1.offsetLeft + speed + 'px'
+        }
+      },30)
+
+		  document.onkeydown = (event) => {
+		    event = event || window.event
+        if (event.ctrlKey) {
+          speed = 100
+        }else {
+          speed = 10
+				}
+        dir = event.keyCode
+      }
+      document.onkeyup = () => {
+        dir = 0
+			}
+		}
+	</script>
+
+</head>
+<body>
+<div id="box1"></div>
+</body>
+</html>

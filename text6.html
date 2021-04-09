@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	function Person() {
+
+  }
+
+  // console.log(Person.prototype);
+
+  Person.prototype.a = 123
+	Person.prototype.fun = function () {
+		alert('我是原型对象中的方法')
+  }
+  var teacher = new Person()
+  // console.log(teacher.__proto__ == Person.prototype);
+	// teacher.a = '我是 a'
+  // alert(teacher.a)
+	// teacher.fun()
+
+  // console.log(teacher.hasOwnProperty('hasOwnProperty'));
+  console.log(teacher.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+
+  //
+	// var doctor = new Person()
+	// doctor.fun()
+</script>
+
+</body>
+</html>

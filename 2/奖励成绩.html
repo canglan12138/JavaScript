@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	while (true) {
+    var scare = parseInt(prompt('请输入成绩：'))
+		if (scare > 0 && scare <= 100) {
+		  break
+		}
+		alert('请输入有效成绩')
+	}
+	if (scare > 100 || scare < 0 || isNaN(scare)) {
+	  alert('输入错误')
+	}else if (scare == 100) {
+	  document.write('奖励你一个宝马')
+	}else if (scare >= 70) {
+    document.write('奖励你一个手机')
+	}else {
+    document.write('啥也没有')
+	}
+
+</script>
+
+</body>
+</html>

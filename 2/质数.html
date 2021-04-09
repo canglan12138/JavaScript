@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	/*
+	* 输出 1-100 以内的质数
+	* */
+	console.time('timer')
+	for (let i = 2;i <= 1000;i++) {
+    var flag = true
+    for (let j = 2;j < Math.sqrt(i);j++) {
+			if (i % j == 0) {
+			  //进入这个判断语句就证明 i 不是一个质数，剩余的就不用看了
+			  flag = false
+				break
+			}
+    }
+    if (flag) {
+      console.log(i);
+    }
+  }
+  console.timeEnd('timer')
+</script>
+
+</body>
+</html>

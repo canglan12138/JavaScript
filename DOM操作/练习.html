@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#picture {
+			width: 500px;
+			margin: 50px auto;
+			padding: 10px;
+			text-align: center;
+			background: deepskyblue;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+		  //拿到 img 对象
+			var img = document.getElementsByTagName('img')[0]
+
+			//要加载的图片存到数组中
+			var arr = ['./img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg']
+
+			//第一次打开页面时，随机展示图片
+      var current = Math.round((Math.random() * (arr.length - 1)))
+      img.src = arr[current]
+      var index = current
+
+			//拿到 p 标签,写标题
+			var headline = document.getElementsByTagName('p')[0]
+			headline.innerHTML = '一共' + arr.length + '张图片,' + '当前第' + (current + 1) + '张'
+
+			//自定义点击事件
+			function myclick(id,fun) {
+        var btn = document.getElementById(id)
+        btn.onclick = fun
+      }
+
+      //监听上一张点击事件
+			myclick('pre',() => {
+        index--
+        if (index < 0) {
+          index = arr.length - 1
+        }
+        img.src = arr[index]
+        headline.innerHTML = '一共' + arr.length + '张图片,' + '当前第' + (index + 1) + '张'
+			})
+
+      //监听下一张点击事件
+			myclick('next',() => {
+        index++
+        if (index > arr.length - 1) {
+          index = 0
+        }
+        img.src = arr[index]
+        headline.innerHTML = '一共' + arr.length + '张图片,' + '当前第' + (index + 1) + '张'
+			})
+    }
+	</script>
+
+</head>
+<body>
+
+<div id="picture">
+	<p></p>
+	<img src="" >
+	<button id="pre">上一张</button>
+	<button id="next">下一张</button>
+</div>
+
+</body>
+</html>
