@@ -23,7 +23,7 @@ function getStyle(obj , name){
  * 	obj:要执行动画的对象
  * 	target:执行动画的目标位置
  * 	speed:移动的速度(正数向右移动，负数向左移动)
- * attr:要执行动画的样式，比如：left top width height
+ *  attr:要执行动画的样式，比如：left top width height
  *  callback:回调函数，这个函数将会在动画执行完毕以后执行
  */
 function move(obj,target,speed,attr,callback) {
@@ -59,7 +59,7 @@ function move(obj,target,speed,attr,callback) {
     //当新的值等于目标值，清除定时器
     if (newValue == target) {
       clearInterval(obj.timer)
-      ////动画执行完毕，调用回调函数
+      // 动画执行完毕，调用回调函数
       callback && callback()
     }
   },30)
