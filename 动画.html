@@ -15,14 +15,19 @@
 			height: 100px;
 			background: red;
 			position: absolute;
+			border-radius: 20px;
+			opacity: 0.8;
 		}
 		#box2 {
 			top: 250px;
 			width: 100px;
 			height: 100px;
-			background: yellow;
+			background: green;
 			position: absolute;
+			border-radius: 20px;
+			opacity: 0.8;
 		}
+
 	</style>
 
 	<script src="js/tools.js"></script>
@@ -66,24 +71,24 @@
             })
           })
 
-          move(box,1650,30,'width',() => {
-            move(box,750,30,'height',() => {
-              move(box,0,30,'top',() => {
-                move(box,100,30,'width',() => {
-                  move(box,100,30,'height',() => {
-                    move(box,131,30,'top')
+          move(box,1650,25,'width',() => {
+            move(box,750,25,'height',() => {
+              move(box,0,25,'top',() => {
+                move(box,100,25,'width',() => {
+                  move(box,100,25,'height',() => {
+                    move(box,131,25,'top')
                   })
                 })
               })
             })
           })
-				},6000)
+				},7000)
 			}
 		}
 	</script>
 
 </head>
-<body>
+<body style="position: absolute">
 <button id="btn_r">点我一下开始box向右移动</button>
 <button id="btn_l">点我一下开始box向左移动</button>
 <br><br>
