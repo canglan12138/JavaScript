@@ -6,22 +6,19 @@
 
 	<script>
 		window.onload = () => {
-      // var pArr = document.getElementsByTagName('p')
-      // console.log(pArr);
-
-			var arr = [1,2,3]
-			arr.forEach((value, index) => {
-        console.log(value, index);
-      })
-      // for (let i in arr) {
-      //   console.log(i + typeof i);
-      // }
+      var pAll = document.getElementsByTagName('p')
+			for (var i = 0;i < pAll.length;i++) {
+			  pAll[i].onclick = function () {
+          alert(this.innerHTML)
+        }
+			}
 		}
 	</script>
 </head>
 <body>
 
-<p></p>
+<p>123</p>
+<p>456</p>
 
 </body>
 </html>
