@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<script>
+		window.onload = () => {
+      var pAll = document.getElementsByTagName('p')
+
+      /*
+			* 0         string
+			* 1         string
+			* length    string
+			* item      string
+			* namedItem string
+			*/
+			for (let i in pAll) {
+        console.log(i + ' ' + typeof i);
+      }
+      console.log('--------------------');
+      console.log(pAll);
+
+      /*
+      *	 0 number
+      *  1 number
+      * */
+			for (let i = 0;i < pAll.length;i++) {
+        console.log(i + ' ' + typeof i);
+      }
+		}
+	</script>
+</head>
+<body>
+
+<p>123</p>
+<p>456</p>
+
+</body>
+</html>
