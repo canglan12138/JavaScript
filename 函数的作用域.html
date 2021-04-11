@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<script>
+		function outer() {
+			let a = 6
+			return function (){
+        console.log(a);
+      }
+    }
+    a = 10
+    let in_fun = outer()
+		in_fun()
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
