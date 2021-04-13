@@ -9,14 +9,14 @@
       var pAll = document.getElementsByTagName('p')
 
       /*
-			* 0         string
-			* 1         string
-			* length    string
-			* item      string
-			* namedItem string
+			* 键：0          键的类型：string
+			* 键：1          键的类型：string
+			* 键：length     键的类型：string
+			* 键：item       键的类型：string
+			* 键：namedItem  键的类型：string
 			*/
-			for (let i in pAll) {
-        console.log(i + ' ' + typeof i);
+			for (let key in pAll) {
+        console.log('键：' + key + '   ' + '键的类型：' + typeof key + '   ' + '值：' + key.value);
       }
       console.log('--------------------');
       console.log(pAll);
